@@ -14,6 +14,7 @@ public class AkaCartProduct : MonoBehaviour
     int quantity;
     ProductVariant variant;
     Product product;
+    bool onAR;
     public void FillChartProduct(AkaProductToPurchaseReference reference)
     {
         string simbol = CurrencySynbol.GetCurrencySimbol(reference.variant.priceV2().currencyCode());
@@ -34,7 +35,8 @@ public class AkaCartProduct : MonoBehaviour
         foreach (var item in reference.variant.selectedOptions())
         {
             TMP_Text variantOption = Instantiate(variantTextPrefab, variantPlace).GetComponent<TMP_Text>();
-            variantOption.text = "" + item.value();
+            string fnalText = item.value() == "Default Title"? reference.product.description():item.value();
+            variantOption.text = fnalText;
         }
     }
     public void Changequantity(bool plus)
@@ -68,6 +70,11 @@ public class AkaCartProduct : MonoBehaviour
         quantityText.text = "" + quantity;
         AkaCart.AddOrUpdate(product, variant, quantity);
     }
+    public void AddToARView()
+    {
+        GetComponent<LoadAssets>().WatchThisFittmentOnAR(variant.id());
+    }
+
     public void DeleteFromCart()
     {
         AkaCart.EraseFromCart(variant.id());

@@ -40,7 +40,8 @@ public class AkaDetailsManager : MonoBehaviour
         StartCoroutine(AkaImageHelper.FillIconImage(iconPlace, vrnt.image().transformedSrc(), defImageIcon));
         loadingBar.fillAmount = 0;
         pOptions = product.options();
-        quantityPlace.text = "" + quantity;
+        if (quantityPlace != null)
+            quantityPlace.text = "" + quantity;
         descriptionText.text = product.description();
         for (int i = 0; i < pOptions.Count; i++)
         {
@@ -93,4 +94,21 @@ public class AkaDetailsManager : MonoBehaviour
             FindObjectOfType<AkaCartManager>().UpdateGlobalQuantity();
         }
     }
+    public void ThisVariantToRA()
+    {
+        GetComponent<LoadAssets>().WatchThisFittmentOnAR(variant.id());
+    }
+#if UNITY_EDITOR
+    public List<string> GetProductVariantInfo()
+    {
+        List<string> fittmentData = new List<string>();
+        fittmentData.Add(variant.id());
+        fittmentData.Add(product.title() + ">>" +variant.title());
+        foreach (var item in variant.selectedOptions())
+        {
+            fittmentData.Add(item.name() + "//" + item.value());
+        }
+        return fittmentData;
+    }
+#endif
 }

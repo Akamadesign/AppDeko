@@ -4,24 +4,24 @@ public class MovingSidePannel : MonoBehaviour
     [SerializeField]
     Vector2 hideMin, hideMax, showMin, showMax;
     [SerializeField]
-    float speed;
-    [SerializeField]
-    bool show;
+    float speed, offsset;
+    public bool toShow; 
     RectTransform mrect;
     void Start()
     {
         mrect = GetComponent<RectTransform>();
         mrect.anchorMax = hideMax;
         mrect.anchorMin = hideMin;
-        show = false;
+        toShow = false;
     }
     void Update()
     {
         Vector2 tarjectMin, tarjectMax;
-        tarjectMin = show ? showMin : hideMin;
-        tarjectMax = show ? showMax : hideMax;
-        if(mrect.anchorMin != tarjectMin || mrect.anchorMax != tarjectMax)
+        tarjectMin = toShow ? showMin : hideMin;
+        tarjectMax = toShow ? showMax : hideMax;
+        if (Vector2.Distance(mrect.anchorMin, tarjectMin) > offsset || Vector2.Distance(mrect.anchorMax, tarjectMax) > offsset)
         {
+            
             if ((mrect.anchorMin - tarjectMin).magnitude <= (hideMin - showMin).magnitude / 10)
                 mrect.anchorMin = tarjectMin;
             else
@@ -30,10 +30,6 @@ public class MovingSidePannel : MonoBehaviour
                 mrect.anchorMax = tarjectMax;
             else
                 mrect.anchorMax = Vector2.Lerp(mrect.anchorMax, tarjectMax, speed * Time.deltaTime);
-        }
-    }
-    public void ShowOrHidePanel(bool show)
-    {
-        this.show = show;
+        } 
     }
 }

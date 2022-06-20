@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1cee975ca5a4e96b3963e8aa610eef, type: 3}
+  m_Name: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQ5Njk1NDYwNTYxOQ==
+  m_EditorClassIdentifier: 
+  variantTitle: Pello>>Default Title
+  variantOptions:
+  - Title//Default Title
+  toDownload:
+  - m_AssetGUID: 3f2a1ee06e6ac4f70b93d947b7f3a4b1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: e28b88822efbe42a5aff7e0a90c68f7f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 0c7b5926c229247a698cf5368e922e7d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: f17ac019c9dd144938737df82eabcfa1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 7c6e143118ebf4d32a92020499bb2788
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: f55f3bad357a3493d85165da49f4a35a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 6c38ac8600d18436f930f0865d22612d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

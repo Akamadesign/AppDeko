@@ -220,6 +220,10 @@ public static class AkaCart
     }
 }
 
+public static class AkaPrefabs
+{
+    public static Dictionary<string, GameObject> LoadedPrefabs = new Dictionary<string, GameObject>();
+}
 /// <summary>
 /// Estructura para definir un producto en el carrito de shopify
 /// </summary>

@@ -3,28 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Shopify.Unity;
+using TMPro;
 public class AkamaruStore : MonoBehaviour
 {
     [Header("Paginas para activar")]
-    [SerializeField] GameObject initialPage;
+    [SerializeField] GameObject initialPage, raScreen;
     [SerializeField] ScrollRect storeGrid;
     public GameObject screenCart;
     public AkaDetailsManager detailsManager;
-    [Header("Prefabricados")]
-    [SerializeField] GameObject gridItemPrefab;
     public enum View { Init, Collections, Furniture, Details, Cart, RA }
     [Header("Vista actual")]
     public View onScreen;
-    [SerializeField] View scrrenBeforeCart;
+    [Header("Prefabricados")]
+    [SerializeField] GameObject gridItemPrefab;
+    [Header("UIToCange")]
+    [SerializeField] UnityEngine.UI.Image backIcon;
+    [SerializeField] TMP_Text backText;
+    [SerializeField] Sprite minor, exit;
 
 
-
+    MovingSidePannel storegridPanel, cartPanel, detailsPAnel;
+    View scrrenBeforeCart;
     List<GameObject> gridItems;
     Collection lastCollection;
-
+    UnityEngine.UI.Image backGround;
     void Start()
     {
+        backGround = GetComponent<UnityEngine.UI.Image>();
         gridItems = new List<GameObject>();
+        storegridPanel = storeGrid.GetComponent<MovingSidePannel>();
+        cartPanel = screenCart.GetComponent<MovingSidePannel>();
+        detailsPAnel = detailsManager.GetComponent<MovingSidePannel>();
         InitiallizeShopifyStore();
     }
 
@@ -147,6 +156,8 @@ public class AkamaruStore : MonoBehaviour
     /// <param name="view">Vista a configurar</param>
     public void SetNewView(View newView)
     {
+        if (backGround == null)
+            backGround = GetComponent<UnityEngine.UI.Image>();
         print("settingnew view to " + newView);
         if (newView == View.Cart)
             scrrenBeforeCart = onScreen;
@@ -154,42 +165,62 @@ public class AkamaruStore : MonoBehaviour
         switch (onScreen)
         {
             case View.Init:
+                backIcon.sprite = exit;
+                backText.text = "Exit";
+                backGround.color = Color.white;
                 initialPage.SetActive(true);
-                storeGrid.gameObject.SetActive(false);
-                screenCart.SetActive(false);
-                detailsManager.gameObject.SetActive(false);
-                gameObject.SetActive(false);
+                storegridPanel.toShow = false;
+                cartPanel.toShow = false;
+                detailsPAnel.toShow = false;
+                raScreen.SetActive(false);
                 break;
             case View.Collections:
+                backIcon.sprite = minor;
+                backText.text = "Back";
+                backGround.color = Color.white;
                 initialPage.SetActive(false);
-                storeGrid.gameObject.SetActive(true);
-                screenCart.SetActive(false);
-                detailsManager.gameObject.SetActive(false);
+                storegridPanel.toShow = true;
+                cartPanel.toShow = false;
+                detailsPAnel.toShow = false;
                 QueryAndDrawCollections();
+                raScreen.SetActive(false);
                 break;
             case View.Furniture:
+                backGround.color = Color.white;
                 initialPage.SetActive(false);
-                storeGrid.gameObject.SetActive(true);
-                screenCart.SetActive(false);
-                detailsManager.gameObject.SetActive(false);
+                storegridPanel.toShow = true;
+                cartPanel.toShow = false;
+                detailsPAnel.toShow = false;
+                raScreen.SetActive(false);
                 break;
             case View.Details:
+                backGround.color = Color.white;
                 initialPage.SetActive(false);
-                storeGrid.gameObject.SetActive(false);
-                screenCart.SetActive(false);
-                detailsManager.gameObject.SetActive(true);
+                storegridPanel.toShow = false;
+                cartPanel.toShow = false;
+                detailsPAnel.toShow = true;
+                raScreen.SetActive(false);
                 break;
             case View.Cart:
+                backGround.color = Color.white;
                 initialPage.SetActive(false);
-                storeGrid.gameObject.SetActive(false);
-                screenCart.SetActive(true);
-                detailsManager.gameObject.SetActive(false);
+                storegridPanel.toShow = false;
+                cartPanel.toShow = true;
+                detailsPAnel.toShow = false;
+                raScreen.SetActive(false);
+                break;
+            case View.RA:
+                backGround.color = Color.clear;
+                initialPage.SetActive(false);
+                storegridPanel.toShow = false;
+                cartPanel.toShow = false;
+                detailsPAnel.toShow = false;
+                raScreen.SetActive(true);
                 break;
             default:
                 break;
         }
     }
-
     /// <summary>
     /// Retocede a la vosta anterior
     /// </summary>
@@ -198,14 +229,13 @@ public class AkamaruStore : MonoBehaviour
         switch (onScreen)
         {
             case View.Init:
-                
+                Application.Quit();
                 break;
             case View.Collections:
                 SetNewView(View.Init);
                 break;
             case View.Furniture:
                 SetNewView(View.Collections);
-                QueryAndDrawCollections();
                 break;
             case View.Details:
                 QueryAndDrawSomeProducts(lastCollection);
