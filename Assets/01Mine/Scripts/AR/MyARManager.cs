@@ -23,12 +23,14 @@ public class MyARManager : MonoBehaviour
     static List<ARRaycastHit> s_hits = new List<ARRaycastHit>();
     Vector2 pointer;
     GameObject objectToPlace, objectPlacing;
-    Rigidbody selectedObject;
+    Rigidbody selectedObject, arfloorRB;
     List<GameObject> objectsOnScene;
     Camera arCamera;
     MyAppManager manager;
-    Vector3 initialSelectedRotation, initialSelectedPosition, midFirstHit;
+    Vector3 initialSelectedRotation, initialSelectedPosition, midFirstHit, arFloorStartPos;
     Vector2 midStartPos, firstDirection;
+
+    float timeTotove;
     private void Awake()
     {
         manager = FindObjectOfType<MyAppManager>();
@@ -66,6 +68,8 @@ public class MyARManager : MonoBehaviour
             }
             else //there is not an object to be placed 
             {
+                if (objectsOnScene.Count > 1)
+                    messagetxt.text = "";
                 if(selectedObject != null)//there is an object selected so we can move it and rotate it
                 {
                     if (Input.touchCount == 2) //we will only move and rotate the selected object if we are using two finguers
@@ -78,10 +82,9 @@ public class MyARManager : MonoBehaviour
                         else
                             MovingAndRotatingSelected();
                     }
-                }else
-                {
-                    LookingForSelection();
+
                 }
+                LookingForSelection();
                 reStart.SetActive(true);
                 cancelIt.SetActive(false);
                 addFitment.SetActive(true);
@@ -94,11 +97,24 @@ public class MyARManager : MonoBehaviour
     {
         if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
         {
+            print("Touching one");
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 100, selectable))
             {
+                print("selecting");
                 selectedObject = hit.collider.GetComponent<Rigidbody>();
+                selectedObject.GetComponent<Outline>().enabled = true;
+                selectedObject.GetComponent<Outline>().OutlineWidth = 10;
+            }
+            else
+            {
+                print("desselect");
+                if (selectedObject != null)
+                {
+                    selectedObject.GetComponent<Outline>().enabled = false;
+                }
+                selectedObject = null;
             }
         }
     }
@@ -139,8 +155,13 @@ public class MyARManager : MonoBehaviour
                 float planeArea = thisplane.size.x * thisplane.size.y;
                 if (planeArea > minimunArea)
                 {
+                    GameObject origin = FindObjectOfType<ARSessionOrigin>().gameObject;
+                    origin.transform.position = hit.pose.position;
+                    origin.transform.rotation = hit.pose.rotation;
                     arFloor.transform.SetPositionAndRotation(hit.pose.position, hit.pose.rotation);
                     arFloor.SetActive(true);
+                    arFloorStartPos = arFloor.transform.position;
+                    arfloorRB = arFloor.GetComponent<Rigidbody>();
                 }
             }
         }
@@ -164,20 +185,28 @@ public class MyARManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100f, floorLayerMask))
         {
-            if (hit.collider.gameObject == arFloor)
+            print("Le estoy dando al suelo");
+            if (objectPlacing == null || !objectPlacing.gameObject.activeInHierarchy)
             {
-                if (objectPlacing == null || !objectPlacing.gameObject.activeInHierarchy) 
-                {
-                    objectPlacing = Instantiate(objectToPlace, hit.point, hit.transform.rotation);
-                    objectPlacing.GetComponent<Outline>().enabled = true;
-                }
-                else
-                {
-                    objectPlacing.transform.position = hit.point;
-                    objectPlacing.transform.rotation = hit.transform.rotation;
-                }
+                objectPlacing = Instantiate(objectToPlace, hit.point, hit.transform.rotation);
+                objectPlacing.GetComponent<Outline>().enabled = true;
+                objectPlacing.GetComponent<Outline>().OutlineWidth = 10;
+            }
+            else
+            {
+                objectPlacing.transform.position = hit.point;
+                objectPlacing.transform.rotation = hit.transform.rotation;
             }
         }
+        else
+        {
+            print("NOO Le estoy dando al suelo");
+        }
+    }
+    public void CancelPlacing()
+    {
+        objectToPlace = null;
+        objectPlacing = null;
     }
     /// <summary>
     /// place the object to a certain space on scene and pre-select it so we can refine the position and rotation of the object
@@ -194,6 +223,7 @@ public class MyARManager : MonoBehaviour
         /// </summary>
     void StartMoveAndRotation()
     {
+        timeTotove = 0.3f;
         print("Starting To Rotate");
         firstDirection = Input.GetTouch(0).position - Input.GetTouch(1).position;
         initialSelectedRotation = selectedObject.transform.rotation.eulerAngles;
@@ -239,5 +269,13 @@ public class MyARManager : MonoBehaviour
         midFirstHit = Vector3.zero;
         initialSelectedPosition = Vector3.zero;
         initialSelectedRotation = Vector3.zero;
+    }
+
+
+    public void SetFloorHeigth(float newHeigth)
+    {
+        float newheigth = Mathf.Lerp(-1, 1, newHeigth);
+        Vector3 newPos = arFloorStartPos + (arFloor.transform.up * newheigth);
+        arfloorRB.MovePosition(newPos);
     }
 }

@@ -23,7 +23,7 @@ public class LoadAssets : MonoBehaviour
         print("Load asset was invoked");
         fittmentID = fit;
         item = null;
-        if (AkaPrefabs.LoadedPrefabs[fittmentID] != null)
+        if (AkaPrefabs.LoadedPrefabs.ContainsKey(fittmentID))
             PrefabToAR();
         else
             StartCoroutine(DownloadScriptableReference());

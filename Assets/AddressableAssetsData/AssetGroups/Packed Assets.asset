@@ -1,0 +1,473 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Packed Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b69125df882b34ac7a44f258b01e29f4
+  m_SerializeEntries:
+  - m_GUID: 4b673422aaf11419082d4392cf59d95f
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/01Prefabs/60cm.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 17089de0c966b42c1ab1f26e83e7e5f2
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloWood 2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c38ac8600d18436f930f0865d22612d
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloWood 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ef3ab5fd1a1724ab3b6f43d93882a936
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloFabric 4.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0c7b5926c229247a698cf5368e922e7d
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_AlbedoTransparency.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7c6e143118ebf4d32a92020499bb2788
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_Normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f55f3bad357a3493d85165da49f4a35a
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_MetallicSmoothness.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f17ac019c9dd144938737df82eabcfa1
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_AO.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e28b88822efbe42a5aff7e0a90c68f7f
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello.blend
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ad0d4fdc510ef4ade84eb96892be3699
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/01Prefabs/40cm.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 824fd2ad28cd54c68b08c3532f33cef5
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/01Prefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ef9c1dbbd102543a4ab927994f37aafa
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101_d.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 370838cfc9cbc4ea19bf06fb5320a935
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101_m.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c68490c67f417462f85d69e53d753abc
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101_ao.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c5c6026b6000940818dbd34ae775a31a
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101_h.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4c25eed57cad4440e93f0cfc80edee31
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101_n.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b8c09b3bc06e848d58b8a1170520beee
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101_mat.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe1bf2c18e8f4401689ac021f0aeb5ac
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101_mat 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c918fe56f79f54237b6c41095f072a6d
+    m_Address: Assets/01Mine/02FurnitureAssets/Aselda/00101.blend
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5a77912bcd13649a39a1e8499aff6898
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/Carpet_Kollund_AlbedoTransparency.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 751dce647a4964c188b7f23193f9a9f9
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/Carpet_Kollund_AO.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6352c54066b11409497359320ebb8a07
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/Carpet_Kollund_Height.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 954a0163ddd534dfcbaa9f8d0859aa9e
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/Carpet_Kollund_MetallicSmoothness.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7de9aa1bddbf54b1db488dfbdfbf23dc
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/Carpet_Kollund_Normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d16d9f619a6d34a0284865087f183d18
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/Carpet_Kollund.blend
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 29a911bd87c8445fcb6adb9ae35212e6
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/Carpet_Kollund.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: db7ea93d3627b432eab6a0a830f5c5cd
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/01Prefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2741c4ea4c5154425aaca2b877f41bcb
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/01Prefabs/2p4x1p7.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e1b5c8aceed70422f9a13b0f4fad048c
+    m_Address: Assets/01Mine/02FurnitureAssets/Carpet_Kollund/01Prefabs/1p2x0p85.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b16c3d45c89974f20840a8dc12eb17c9
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Fabric Beige.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 936a9628847fa43e19a6a0a103ad0dea
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Fabric Red.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5279420f6a2d94050bb13a85bf39a0f0
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Fabric White.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c93d8693c2b044840b68fcdda4790f43
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b1a9dc556baae45b79fcd3ac8c151549
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Withe Dark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 149b60f4839ea491e8c2afab8bfe1fae
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Withe Clear.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 014886ba397fd493491fefcda3fc179d
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Beige Clear.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 02e027ab48a914d1f851eb5bbfd3a7e5
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Beige Dark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 93d51a458d16545ec92ad99c5a0cc2c0
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Blue Dark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f75e17f511bc47f882ecb7244b1fd6e
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Blue Clear.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 044558330454e457fa5dd1064a2b3709
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Red Clear.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2741dadb6c97145dd8561c16cb31a32a
+    m_Address: Assets/01Mine/02FurnitureAssets/Pello/01Prefbas/Red Dark.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a6cc8a67e0b0c4e64b7c69ca3b3ba27c
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e984d6958f42a472193173710e7924cb
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/CottonWhite.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77d36f055bb134527ab3b6e3ae61d791
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/CottonGray.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5449360f8c9c544299678c02be510683
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/CottonBlack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87febfb0588fa45f3b3ae06cd655adb2
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/CottonBeige.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0a7ae487305c8417bbdcf6ec517e158e
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/LeatherWhite.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 359513e0d4d1c419fb99a3e3f5d9e7d3
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/LeatherGray.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 744ae10fba18c477397d0cc1f2a7005f
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/LeatherBlack.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cf639cbe1cad94f2c8cf6413c4eabc30
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/01Prefabs/LeatherBeige.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1a3dd746cda9b4a75857efb310b4ceb1
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/CottonWhite.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6f81e25abcee641dc8add5709cccb3be
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Soderhamn_Pillows.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c6ca2a5512933483da9f6d3a854080e5
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/CottonGray.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dd15643db90a04c8cab4d5b644906bb1
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/CottonBlack.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f5ed8711e902146eab30635f5a5d6d00
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/CottonBeige.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac97fd2c8d87647bbbefd7e3c83ae346
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/LeatherWhite.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4cdaca110d351405f9b5fff13498a876
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/LeatherGray.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c8183d5b41e9145a19c691e75083d77a
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/LeatherBlack.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a0f33760e371740d3931df8de64f1de9
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/LeatherBeige.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: db157631323b74996ab952d1ac1347bf
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Soderhamn_Normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e9204fe73fa3e4526872231edf0c1f5c
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Soderhamn.blend
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 171c7f7150df54014a0b1fcf13beec63
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Pillows
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ce7881ff046d341b5b8714b7d7eaef2f
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Pillows/Soderhamn_Pillows_AlbedoTransparency.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3785e58a0424a4c3e9963e8c8bbdc6bc
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Pillows/Soderhamn_Pillows_AO.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: da9d9401af3cd4ae798ffaf89109cc0e
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Pillows/Soderhamn_Pillows_MetallicSmoothness.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cdf572bdda1304b3da1d451dcd412f00
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Pillows/Soderhamn_Pillows_Normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 57c3c675bd3654caaab02a9eff38428c
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e1680925ab2721045895d28235476cbe
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/cotton_canvas_ambientocclusion.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3f49b5adca426643af5ad0704dd04bb
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/cotton_canvas_basecolor.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f866f090f9a5774d88246ea10a0b6d5
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/cotton_canvas_height.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f7f3adf737c578a4bb782ed637b5b665
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/cotton_canvas_metallic.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4a1a32fa4ee4ff4a8ef7d85f918a9a6
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/cotton_canvas_normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7edeefcc3ffb4ab1b53e9e52f512978
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/119_leather-AO.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 329545655bf1e47ea9d966c5cf4beb4b
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/119_leather_NORM.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cbd00496ce91b496286b8dfcc0dcf77a
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/119_leather_DIFF.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 77aa0e3226a4844dabe6f9a4b0798f07
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/119_leather_DISPL.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b05896c113ae4b02b0802c3ffc17f97
+    m_Address: Assets/01Mine/02FurnitureAssets/Soderhamn/Fabric_Canvas/119_leather_SPEC.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 01d7182314f614bc8a0ac1b65a0d036d
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/Ypperlig_Chair_AlbedoTransparency.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a166547367f2f44f3bd6ab6187ee9196
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/Ypperlig_Chair_AO.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 863f24c1d4efd4cf2994fb2b6b3c5617
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/Ypperlig_Chair_MetallicSmoothness.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 915ff6d4739fa48be9606042194b6eed
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/Ypperlig_Chair_Normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f6c1842fc2f004b44897f42575830954
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/Green.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1ec8c812405ba4404956b21bb352a443
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/Red.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 092ea6f1f24d24780b7e38e4ed4c73c3
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/White.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b99a7a886273643a6b49c190e41beb47
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/Ypperlig_Chair.blend
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7a301a64140e945b3a521f7389fa3257
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/01Prefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c11c15c1f0d9c45a3888923db1bbeea0
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/01Prefabs/Red.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c82d152e0300a470cb67c6904e92c504
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/01Prefabs/Green.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d41ca7ed05dd94d76ab46e5eed843970
+    m_Address: Assets/01Mine/02FurnitureAssets/Ypperlig_Chair/01Prefabs/White.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 44e3462dbb00948ea8ba096cab7962a2
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQ5Njk1OTk0NjgwMw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ad92dd116c003422b88768ad484a3e13
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQ5Njk1OTkxNDAzNQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b214b6f0ad0a846daa388c650db515a0
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQ5Njk2OTI1MjkxNQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3338e8a14a46d46b1806b212d4ea8151
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDU5MjQ5MTgwNjc3MQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2d8d91f66b15e49ffb237fcf9aa83d66
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDc1NzkzOQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 69d6af231b6bd41e2a32ff0876126729
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDc5MDcwNw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 79502538b5ec44d12989b975c78d43db
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDg1NjI0Mw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 53df1fc94f8be4134b4cdcba3bad821f
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDg4OTAxMQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f9c75602c4f7b423a826485ed4d8f4f5
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDgyMzQ3NQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d134c67f02c8346d9ae2c61a95773a9a
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDk1NDU0Nw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ba4bd2e372e0049ba9529e655cc6f438
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDkyMTc3OQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1cebe3a4a23154680aef48d8a48eb19a
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTQ2NTkwNw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 31ca725069a80473687bde437bac972c
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTQ5ODY3NQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a811b421a5eaa43719252f22e11c7b08
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTQwMDM3MQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f113bf5b114dd4e1d9c13cb2518c89b2
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTQzMzEzOQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2e931bd5ee51c417984b44af9a09c582
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTU2NDIxMQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 062bd69eeca3a4a34b2d005df8575806
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTU5Njk3OQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c43ec7362d2fb48bfb114885fe2c1bdc
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTUzMTQ0Mw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a00ac6c12985c47889741da9c6b8302e
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjYwMTYyOTc0Nw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2bee86f3a402245ea97d61d8f32a1f7e
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1NTU2MjgwMw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 40fb7625bc8d74c1887e1703437afd2b
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1NTU5NTU3MQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3397f0798670a47c693893f1fe4f0416
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1ODcwODUzMQ==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: be7b7c7fe973d4a6a93bdc2f834af9b5
+    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1ODY3NTc2Mw==.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: ded5010c476864dbfb6c9d630d4ab49b, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a8453dd8197dc497595b71c9a80a7527, type: 2}
+    - {fileID: 11400000, guid: 596b935986f5c4bf9b5ce8af2ed2c600, type: 2}

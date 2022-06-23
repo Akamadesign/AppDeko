@@ -243,6 +243,9 @@ public class AkamaruStore : MonoBehaviour
             case View.Cart:
                 SetNewView(scrrenBeforeCart);
                 break;
+            case View.RA:
+                SetNewView(View.Collections);
+                break;
             default:
                 break;
         }

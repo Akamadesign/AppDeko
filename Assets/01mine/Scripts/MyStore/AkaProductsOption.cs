@@ -39,8 +39,17 @@ public class AkaProductsOption : MonoBehaviour
                 if (item.selectedOptions()[optionIndex].value() == optionValue)
                     StartCoroutine(AkaImageHelper.FillProductVariant(gridItem, rootProduct, item, optionValue));
             }
-            if (currVar.selectedOptions()[optionIndex].value() != optionValue && gridItem.currentVariant.availableForSale())
-                itemButton.interactable = true;
+            if (currVar.selectedOptions()[optionIndex].value() != optionValue)
+            {
+                if (gridItem.currentVariant.availableForSale())
+                    itemButton.interactable = true;
+            }
+            else
+            {
+                var colors = itemButton.colors;
+                colors.disabledColor = Color.gray;
+                itemButton.colors = colors;
+            }
         }
     }
 }

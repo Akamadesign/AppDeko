@@ -16,59 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 4980c6706b19c404f93184c13b36466f
-  m_SerializeEntries:
-  - m_GUID: 3d701e08e90e84df5baa52d88b44d395
-    m_Address: Assets/01Mine/ShopifyScriptables/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQ5Njk1NDYwNTYxOQ==.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 2374a4e6f1cbe4a80a420076d2adfc62
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloFabric 1.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: d3b839084395e4d2799a0797e59584c9
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloFabric 3.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 17089de0c966b42c1ab1f26e83e7e5f2
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloWood 2.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 6c38ac8600d18436f930f0865d22612d
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloWood 1.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8fec40e73b6ab4be8934d5463a9a6de3
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloFabric 2.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ef3ab5fd1a1724ab3b6f43d93882a936
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloFabric 4.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3f2a1ee06e6ac4f70b93d947b7f3a4b1
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/PelloDefault.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 0c7b5926c229247a698cf5368e922e7d
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_AlbedoTransparency.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7c6e143118ebf4d32a92020499bb2788
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_Normal.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f55f3bad357a3493d85165da49f4a35a
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_MetallicSmoothness.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f17ac019c9dd144938737df82eabcfa1
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello_AO.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e28b88822efbe42a5aff7e0a90c68f7f
-    m_Address: Assets/01Mine/02FurnitureAssets/Pello/Pello.blend
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ded5010c476864dbfb6c9d630d4ab49b, type: 2}
   m_SchemaSet:
