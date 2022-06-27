@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDk1NDU0Nw==
   m_EditorClassIdentifier: 
   variantTitle: Soderhamn>>Beige / Leather
+  vID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2MjM1MDk1NDU0Nw==
+  pID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MDc1MTc0ODkyMDM=
   variantOptions:
+  - Soderhamn>>Beige / Leather
   - Color//Beige
   - Material//Leather
   toDownload:
@@ -21,7 +24,19 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  - m_AssetGUID: a0f33760e371740d3931df8de64f1de9
+  - m_AssetGUID: f5ed8711e902146eab30635f5a5d6d00
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: dd15643db90a04c8cab4d5b644906bb1
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: c6ca2a5512933483da9f6d3a854080e5
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 1a3dd746cda9b4a75857efb310b4ceb1
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -65,10 +80,21 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  - m_AssetGUID: e9204fe73fa3e4526872231edf0c1f5c
-    m_SubObjectName: Soderhamn
-    m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  - m_AssetGUID: a0f33760e371740d3931df8de64f1de9
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: c8183d5b41e9145a19c691e75083d77a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 4cdaca110d351405f9b5fff13498a876
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: ac97fd2c8d87647bbbefd7e3c83ae346
+    m_SubObjectName: 
+    m_SubObjectType: 
     m_EditorAssetChanged: 0
   - m_AssetGUID: ce7881ff046d341b5b8714b7d7eaef2f
     m_SubObjectName: 
@@ -85,6 +111,11 @@ MonoBehaviour:
   - m_AssetGUID: cdf572bdda1304b3da1d451dcd412f00
     m_SubObjectName: 
     m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: e9204fe73fa3e4526872231edf0c1f5c
+    m_SubObjectName: Soderhamn
+    m_SubObjectType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
     m_EditorAssetChanged: 0
   - m_AssetGUID: 6f81e25abcee641dc8add5709cccb3be
     m_SubObjectName: 

@@ -10,7 +10,9 @@ public class AdressableCreator : MonoBehaviour
         List<string> variantData = FindObjectOfType<AkaDetailsManager>().GetProductVariantInfo();
         SItem newAssetList = new SItem();
         newAssetList.toDownload = new List<AssetReference>();
-        newAssetList.variantTitle = variantData[1];
+        newAssetList.vID = variantData[0];
+        newAssetList.pID = variantData[1];
+        newAssetList.variantTitle = variantData[2];
         List<string> opciones = new List<string>();
         for (int i = 2; i < variantData.Count; i++)
         {
@@ -21,14 +23,14 @@ public class AdressableCreator : MonoBehaviour
             AssetDatabase.CreateFolder("Assets", "01Mine");
         if (!AssetDatabase.IsValidFolder("Assets/01Mine/ShopifyScriptables"))
             AssetDatabase.CreateFolder("Assets/01Mine", "ShopifyScriptables");
-        if (AssetDatabase.AssetPathToGUID("Assets/01Mine/ShopifyScriptables/" + variantData[0] + ".asset") == null)
+        if(System.IO.File.Exists(Application.dataPath +  "/01Mine/ShopifyScriptables/" + variantData[0] + ".asset"))
         {
-            AssetDatabase.CreateAsset(newAssetList, "Assets/01Mine/ShopifyScriptables/" + variantData[0] + ".asset");
-            AssetDatabase.SaveAssets();
+            print("Este asset ya existe, se llama : " + variantData[0]);
         }
         else
         {
-            print("Este asset ya existe, se llama : " + variantData[0]);
+            AssetDatabase.CreateAsset(newAssetList, "Assets/01Mine/ShopifyScriptables/" + variantData[0] + ".asset");
+            AssetDatabase.SaveAssets();
         }
     }
 #endif

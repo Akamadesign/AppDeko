@@ -5,6 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using Shopify.Unity;
 using Image = UnityEngine.UI.Image;
+public static class AkaProductsList
+{
+    public static Dictionary<string, Product> productsOnStore = new Dictionary<string, Product>();
+
+}
+
 public static class AkaImageHelper
 {
     public static readonly Dictionary<string, Texture2D> TextureCache = new Dictionary<string, Texture2D>();
@@ -19,6 +25,7 @@ public static class AkaImageHelper
     public static IEnumerator FillIconImage(Image image, string imageURL, Image brokenImage = null)
     {
         Debug.Log("Filling image");
+        image.color = Color.clear;
         if (imageURL != null && imageURL != "" && !TextureCache.ContainsKey(imageURL))
         {
             using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(imageURL))
@@ -35,6 +42,7 @@ public static class AkaImageHelper
             }
         }
         var texture = TextureCache[imageURL];
+        image.color = Color.white;
         image.sprite = Sprite.Create(
             texture,
             new Rect(0, 0, texture.width, texture.height),
@@ -104,7 +112,6 @@ public static class AkaImageHelper
             if (gridItem.brokenImage != null) gridItem.brokenImage.gameObject.SetActive(false);
         }
     }
-
     /// <summary>
     /// Pone datos de posibles variantes en un tipo especial de GridItem
     /// </summary>
@@ -160,7 +167,6 @@ public static class AkaImageHelper
         }
 
     }
-
 }
 
 public static class AkaCart
@@ -241,4 +247,3 @@ public class AkaProductToPurchaseReference
         this.variant = variant;
     }
 }
-

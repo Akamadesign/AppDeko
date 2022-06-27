@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1ODcwODUzMQ==
   m_EditorClassIdentifier: 
   variantTitle: Aselda>>40cm
+  vID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1ODcwODUzMQ==
+  pID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MDc1MTM3MjA4ODM=
   variantOptions:
+  - Aselda>>40cm
   - Size//40cm
   toDownload:
   - m_AssetGUID: ad0d4fdc510ef4ade84eb96892be3699

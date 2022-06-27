@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1ODY3NTc2Mw==
   m_EditorClassIdentifier: 
   variantTitle: Aselda>>60cm
+  vID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1ODY3NTc2Mw==
+  pID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MDc1MTM3MjA4ODM=
   variantOptions:
+  - Aselda>>60cm
   - Size//60cm
   toDownload:
   - m_AssetGUID: 4b673422aaf11419082d4392cf59d95f

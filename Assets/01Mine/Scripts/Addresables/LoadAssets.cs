@@ -17,14 +17,20 @@ public class LoadAssets : MonoBehaviour
     public List<AssetReference> assetsToDownload;
 
     bool executingSomeAsync;
-
-    public void WatchThisFittmentOnAR(string fit)
+    bool newObject;
+    public void WatchThisFittmentOnAR(string fit, bool newGameObject)
     {
+        newObject = newGameObject;
         print("Load asset was invoked");
         fittmentID = fit;
         item = null;
         if (AkaPrefabs.LoadedPrefabs.ContainsKey(fittmentID))
-            PrefabToAR();
+        {
+            if (newObject)
+                PrefabToAR();
+            else
+                ReplacePrefab();
+        }
         else
             StartCoroutine(DownloadScriptableReference());
     }
@@ -97,7 +103,10 @@ public class LoadAssets : MonoBehaviour
         {
             print("prefab Loaded");
             AkaPrefabs.LoadedPrefabs.Add(fittmentID, pref.Result);
-            PrefabToAR();
+            if (newObject)
+                PrefabToAR();
+            else
+                ReplacePrefab();
         }
         executingSomeAsync = false;
     }
@@ -105,5 +114,9 @@ public class LoadAssets : MonoBehaviour
     {
         FindObjectOfType<AkamaruStore>().SetNewView(AkamaruStore.View.RA);
         FindObjectOfType<MyARManager>().AddThisFittment(AkaPrefabs.LoadedPrefabs[fittmentID]);
+    }
+    void ReplacePrefab()
+    {
+        FindObjectOfType<MyARManager>().ReplacePrefab(AkaPrefabs.LoadedPrefabs[fittmentID]);
     }
 }

@@ -13,11 +13,22 @@ MonoBehaviour:
   m_Name: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQ5Njk1OTk0NjgwMw==
   m_EditorClassIdentifier: 
   variantTitle: Yperling>>White / Regular
+  vID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDQ5Njk1OTk0NjgwMw==
+  pID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MDc1MTc4ODI0MTk=
   variantOptions:
+  - Yperling>>White / Regular
   - Color//White
   - Size//Regular
   toDownload:
   - m_AssetGUID: d41ca7ed05dd94d76ab46e5eed843970
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: f6c1842fc2f004b44897f42575830954
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 1ec8c812405ba4404956b21bb352a443
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -29,4 +40,20 @@ MonoBehaviour:
     m_SubObjectName: upperlig_chair003
     m_SubObjectType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 01d7182314f614bc8a0ac1b65a0d036d
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: a166547367f2f44f3bd6ab6187ee9196
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 863f24c1d4efd4cf2994fb2b6b3c5617
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 915ff6d4739fa48be9606042194b6eed
+    m_SubObjectName: 
+    m_SubObjectType: 
     m_EditorAssetChanged: 0

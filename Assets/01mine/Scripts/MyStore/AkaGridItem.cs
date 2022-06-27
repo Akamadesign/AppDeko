@@ -20,11 +20,21 @@ public class AkaGridItem : MonoBehaviour
         }
         else if (product != null)
         {
-            variantes = (List<ProductVariant>)product.variants();
-            AkamaruStore AkaStore = FindObjectOfType<AkamaruStore>();
-            AkaStore.SetNewView(AkamaruStore.View.Details);
-            AkaStore.detailsManager.FillWithDetails(product, currentVariant != null ? currentVariant : variantes[0]);
-            print("ProductButton " + product.title());
+            MyARManager arManager = FindObjectOfType<MyARManager>();
+
+            if (arManager != null && arManager.gameObject.activeInHierarchy && arManager.selectedObject != null)
+            {
+                arManager.fittmentDetails.GetComponent<RAFittmentDetails>().FillWithDetails(product, currentVariant);
+                FindObjectOfType<RAFittmentDetails>().GetComponent<LoadAssets>().WatchThisFittmentOnAR(currentVariant.id(), false);
+            }
+            else
+            {
+                variantes = (List<ProductVariant>)product.variants();
+                AkamaruStore AkaStore = FindObjectOfType<AkamaruStore>();
+                AkaStore.SetNewView(AkamaruStore.View.Details);
+                AkaStore.detailsManager.RADetailsFill(product, currentVariant != null ? currentVariant : variantes[0]);
+                print("ProductButton " + product.title());
+            }
         }
     }
 }

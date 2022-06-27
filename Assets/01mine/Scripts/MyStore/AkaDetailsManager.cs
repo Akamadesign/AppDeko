@@ -21,7 +21,7 @@ public class AkaDetailsManager : MonoBehaviour
     List<ProductOption> pOptions;
     int quantity = 1;
 
-    public void FillWithDetails(Product prdct, ProductVariant vrnt)
+    public void RADetailsFill(Product prdct, ProductVariant vrnt)
     {
         print(prdct.title() + " // " + vrnt.title() + " tiene (" + vrnt.quantityAvailable() + ") elemntos disponibles");
         variant = vrnt;
@@ -96,13 +96,14 @@ public class AkaDetailsManager : MonoBehaviour
     }
     public void ThisVariantToRA()
     {
-        GetComponent<LoadAssets>().WatchThisFittmentOnAR(variant.id());
+        GetComponent<LoadAssets>().WatchThisFittmentOnAR(variant.id(),true);
     }
 #if UNITY_EDITOR
     public List<string> GetProductVariantInfo()
     {
         List<string> fittmentData = new List<string>();
         fittmentData.Add(variant.id());
+        fittmentData.Add(product.id());
         fittmentData.Add(product.title() + ">>" +variant.title());
         foreach (var item in variant.selectedOptions())
         {

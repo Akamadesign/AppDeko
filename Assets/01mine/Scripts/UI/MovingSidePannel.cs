@@ -32,4 +32,8 @@ public class MovingSidePannel : MonoBehaviour
                 mrect.anchorMax = Vector2.Lerp(mrect.anchorMax, tarjectMax, speed * Time.deltaTime);
         } 
     }
+    public void HideOrShowPanel(bool show)
+    {
+        toShow = show;
+    }
 }

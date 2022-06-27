@@ -13,17 +13,15 @@ MonoBehaviour:
   m_Name: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1NTU2MjgwMw==
   m_EditorClassIdentifier: 
   variantTitle: Kollund>>Large
+  vID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC80MDY2Mzg1NTU2MjgwMw==
+  pID: Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3MDc1MTYyNzY3ODc=
   variantOptions:
+  - Kollund>>Large
   - Size//Large
   toDownload:
   - m_AssetGUID: 2741c4ea4c5154425aaca2b877f41bcb
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  - m_AssetGUID: d16d9f619a6d34a0284865087f183d18
-    m_SubObjectName: ChamferBox080
-    m_SubObjectType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
     m_EditorAssetChanged: 0
   - m_AssetGUID: 29a911bd87c8445fcb6adb9ae35212e6
     m_SubObjectName: 
@@ -48,4 +46,9 @@ MonoBehaviour:
   - m_AssetGUID: 7de9aa1bddbf54b1db488dfbdfbf23dc
     m_SubObjectName: 
     m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: d16d9f619a6d34a0284865087f183d18
+    m_SubObjectName: ChamferBox080
+    m_SubObjectType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
     m_EditorAssetChanged: 0

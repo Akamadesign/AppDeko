@@ -23,7 +23,7 @@ public class AkamaruStore : MonoBehaviour
 
 
     MovingSidePannel storegridPanel, cartPanel, detailsPAnel;
-    View scrrenBeforeCart;
+    View scrrenBeforeCart, screenBeforeRA;
     List<GameObject> gridItems;
     Collection lastCollection;
     UnityEngine.UI.Image backGround;
@@ -36,7 +36,6 @@ public class AkamaruStore : MonoBehaviour
         detailsPAnel = detailsManager.GetComponent<MovingSidePannel>();
         InitiallizeShopifyStore();
     }
-
     /// <summary>
     /// Inicia la aplicaion de la tienda
     /// </summary>
@@ -44,11 +43,10 @@ public class AkamaruStore : MonoBehaviour
     {
         InitiallizeShopifyStore();
         SetNewView(View.Collections);
-        if(gridItems != null)
+        if (gridItems != null)
             CleanGridList();
         gridItems = new List<GameObject>();
     }
-
     /// <summary>
     /// Inicializa la tienda de shopify
     /// </summary>
@@ -57,7 +55,6 @@ public class AkamaruStore : MonoBehaviour
         ShopifyBuy.Init("c0aab686e583c894c50ca1b82b025137", "gyanezfeliu.myshopify.com");
         AkaCart.IniTializeCart();
     }
-
     /// <summary>
     /// Dibuja una lista de colecciones en cuadricula
     /// </summary>
@@ -86,7 +83,6 @@ public class AkamaruStore : MonoBehaviour
             }
         });
     }
-
     /// <summary>
     /// Dibuja una lista de Productos en cuadricula
     /// </summary>
@@ -107,7 +103,6 @@ public class AkamaruStore : MonoBehaviour
             FillGridList(products);
         }, pdctsids);
     }
-
     /// <summary>
     /// Llena la cuadricula con la lista de colecciones
     /// </summary>
@@ -122,7 +117,6 @@ public class AkamaruStore : MonoBehaviour
             StartCoroutine(AkaImageHelper.FillGridItem(gridItem, item.title(), item, null));
         }
     }
-
     /// <summary>
     /// Llena la cuadricula con la lista de Productos
     /// </summary>
@@ -131,13 +125,16 @@ public class AkamaruStore : MonoBehaviour
     {
         foreach (Product item in products)
         {
+            if (!AkaProductsList.productsOnStore.ContainsKey(item.id()))
+            {
+                AkaProductsList.productsOnStore.Add(item.id(), item);
+            }
             GameObject griditemGO = Instantiate(gridItemPrefab, storeGrid.content);
             AkaGridItem gridItem = griditemGO.GetComponent<AkaGridItem>();
             gridItems.Add(griditemGO);
             StartCoroutine(AkaImageHelper.FillGridItem(gridItem, item.title(), null, item));
         }
     }
-
     /// <summary>
     /// Limpia lista de items en la cuadricula
     /// </summary>
@@ -149,7 +146,6 @@ public class AkamaruStore : MonoBehaviour
         }
         gridItems = new List<GameObject>();
     }
-
     /// <summary>
     /// Configura la nueva vista
     /// </summary>
@@ -161,6 +157,8 @@ public class AkamaruStore : MonoBehaviour
         print("settingnew view to " + newView);
         if (newView == View.Cart)
             scrrenBeforeCart = onScreen;
+        if (newView == View.RA)
+            screenBeforeRA = onScreen;
         onScreen = newView;
         switch (onScreen)
         {
@@ -210,6 +208,7 @@ public class AkamaruStore : MonoBehaviour
                 raScreen.SetActive(false);
                 break;
             case View.RA:
+
                 backGround.color = Color.clear;
                 initialPage.SetActive(false);
                 storegridPanel.toShow = false;
@@ -244,11 +243,10 @@ public class AkamaruStore : MonoBehaviour
                 SetNewView(scrrenBeforeCart);
                 break;
             case View.RA:
-                SetNewView(View.Collections);
+                SetNewView(screenBeforeRA);
                 break;
             default:
                 break;
         }
     }
-
 }

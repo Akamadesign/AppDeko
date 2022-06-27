@@ -72,11 +72,15 @@ public class AkaCartProduct : MonoBehaviour
     }
     public void AddToARView()
     {
-        GetComponent<LoadAssets>().WatchThisFittmentOnAR(variant.id());
+        GetComponent<LoadAssets>().WatchThisFittmentOnAR(variant.id(), true);
     }
 
     public void DeleteFromCart()
     {
         AkaCart.EraseFromCart(variant.id());
+    }
+    public void AddToRaView()
+    {
+
     }
 }

@@ -11,7 +11,9 @@ public class MyARManager : MonoBehaviour
     [Tooltip("El objeto texto que mostrará mensajes en la pantalla")]
     [SerializeField] TMP_Text messagetxt;
     [Tooltip("Botones de UI que se activaran segun las circunstacias")]
-    [SerializeField] GameObject reStart, cancelIt, addFitment, readytoPlace;
+    public GameObject fittmentDetails;
+    [Tooltip("Botones de UI que se activaran segun las circunstacias")]
+    [SerializeField] GameObject reStart, cancelIt, addFitment, readytoPlace, fittmentInfo, deleteFittment;
     [Header("Behaviour Elements")]
     [Tooltip("Area minima a detectar para dar por hecho que hay un ''piso''")]
     [SerializeField] float minimunArea;
@@ -23,9 +25,11 @@ public class MyARManager : MonoBehaviour
     static List<ARRaycastHit> s_hits = new List<ARRaycastHit>();
     Vector2 pointer;
     GameObject objectToPlace, objectPlacing;
-    Rigidbody selectedObject, arfloorRB;
+    Rigidbody arfloorRB;
     List<GameObject> objectsOnScene;
     Camera arCamera;
+
+    public Rigidbody selectedObject;
     MyAppManager manager;
     Vector3 initialSelectedRotation, initialSelectedPosition, midFirstHit, arFloorStartPos;
     Vector2 midStartPos, firstDirection;
@@ -64,6 +68,8 @@ public class MyARManager : MonoBehaviour
                 cancelIt.SetActive(true);
                 addFitment.SetActive(false);
                 readytoPlace.SetActive(true);
+                fittmentInfo.SetActive(false);
+                deleteFittment.SetActive(false);
                 PreplaceObject(); //place the object and select it
             }
             else //there is not an object to be placed 
@@ -72,6 +78,13 @@ public class MyARManager : MonoBehaviour
                     messagetxt.text = "";
                 if(selectedObject != null)//there is an object selected so we can move it and rotate it
                 {
+                    reStart.SetActive(false);
+                    cancelIt.SetActive(false);
+                    addFitment.SetActive(false);
+                    readytoPlace.SetActive(false);
+                    fittmentInfo.SetActive(true);
+                    deleteFittment.SetActive(true);
+
                     if (Input.touchCount == 2) //we will only move and rotate the selected object if we are using two finguers
                     {
                         print("Second Touch");
@@ -82,17 +95,22 @@ public class MyARManager : MonoBehaviour
                         else
                             MovingAndRotatingSelected();
                     }
-
+                }else
+                {
+                    reStart.SetActive(true);
+                    cancelIt.SetActive(false);
+                    addFitment.SetActive(true);
+                    readytoPlace.SetActive(false);
+                    fittmentInfo.SetActive(false);
+                    deleteFittment.SetActive(false);
                 }
                 LookingForSelection();
-                reStart.SetActive(true);
-                cancelIt.SetActive(false);
-                addFitment.SetActive(true);
-                readytoPlace.SetActive(false);
             }
         }
     }
-
+    /// <summary>
+    /// Busca oprtunidades de seleccinonar un elemento
+    /// </summary>
     void LookingForSelection()
     {
         if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
@@ -156,8 +174,7 @@ public class MyARManager : MonoBehaviour
                 if (planeArea > minimunArea)
                 {
                     GameObject origin = FindObjectOfType<ARSessionOrigin>().gameObject;
-                    origin.transform.position = hit.pose.position;
-                    origin.transform.rotation = hit.pose.rotation;
+                    origin.transform.SetPositionAndRotation(hit.pose.position, hit.pose.rotation);
                     arFloor.transform.SetPositionAndRotation(hit.pose.position, hit.pose.rotation);
                     arFloor.SetActive(true);
                     arFloorStartPos = arFloor.transform.position;
@@ -270,12 +287,44 @@ public class MyARManager : MonoBehaviour
         initialSelectedPosition = Vector3.zero;
         initialSelectedRotation = Vector3.zero;
     }
-
-
+    /// <summary>
+    /// Eleva o baja el suelo segun nececidad...
+    /// </summary>
+    /// <param name="newHeigth"></param>
     public void SetFloorHeigth(float newHeigth)
     {
         float newheigth = Mathf.Lerp(-1, 1, newHeigth);
         Vector3 newPos = arFloorStartPos + (arFloor.transform.up * newheigth);
         arfloorRB.MovePosition(newPos);
+    }
+
+    public void GetFittmentInfo()
+    {
+        print("trying to dyplay info");
+        AkaSelectable ss = selectedObject.GetComponent<AkaSelectable>();
+        Shopify.Unity.Product pr = null;
+        Shopify.Unity.ProductVariant vr = null;
+        AkaProductsList.productsOnStore.TryGetValue(ss.productID, out pr);
+        List<Shopify.Unity.ProductVariant> variantes = (List<Shopify.Unity.ProductVariant>)pr.variants();
+        foreach (var item in variantes)
+            if(item.id() == ss.variantID)
+                vr = item;
+        fittmentDetails.GetComponent<MovingSidePannel>().toShow = true;
+        fittmentDetails.GetComponent<RAFittmentDetails>().FillWithDetails(pr,vr);
+    }
+   
+    public void DeleteSelectedItem()
+    {
+        print("trying to delete fittment");
+        Destroy(selectedObject.gameObject);
+        selectedObject = null;
+    }
+    public void ReplacePrefab(GameObject newPrefab)
+    {
+        Pose keppPose = new Pose(selectedObject.transform.position, selectedObject.transform.rotation);
+        DeleteSelectedItem();
+        selectedObject = Instantiate(newPrefab, keppPose.position, keppPose.rotation).GetComponent<Rigidbody>();
+        selectedObject.GetComponent<Outline>().enabled = true;
+        selectedObject.GetComponent<Outline>().OutlineWidth = 10;
     }
 }
