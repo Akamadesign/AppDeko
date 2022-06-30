@@ -51,6 +51,36 @@ public class AkaDetailsManager : MonoBehaviour
         }
         StartCoroutine(ReArrangeitmes());
     }
+    public void FillWithDetails(Product prdct, ProductVariant vrnt)
+    {
+        print(prdct.title() + " // " + vrnt.title() + " tiene (" + vrnt.quantityAvailable() + ") elemntos disponibles");
+        variant = vrnt;
+        List<AkaProductsOption> optiones = new List<AkaProductsOption>();
+        optiones.AddRange(optionsPlace.GetComponentsInChildren<AkaProductsOption>());
+        foreach (var item in optiones)
+        {
+            Destroy(item.gameObject);
+        }
+        quantity = 1;
+        contentRecT = GetComponent<ScrollRect>().content;
+        product = prdct;
+        namePlace.text = product.title();
+        //pricePlace.text = CurrencySynbol.GetCurrencySimbol(variant.priceV2().currencyCode()) + (float)vrnt.priceV2().amount();
+        defImageIcon.gameObject.SetActive(true);
+        StartCoroutine(AkaImageHelper.FillIconImage(iconPlace, vrnt.image().transformedSrc(), defImageIcon));
+        loadingBar.fillAmount = 0;
+        pOptions = product.options();
+        if (quantityPlace != null)
+            quantityPlace.text = "" + quantity;
+        descriptionText.text = product.description();
+        for (int i = 0; i < pOptions.Count; i++)
+        {
+            GameObject optionGO = Instantiate(productOptionPrefab, optionsPlace);
+            AkaProductsOption optionFill = optionGO.GetComponent<AkaProductsOption>();
+            optionFill.PlaceNewSetOfOptions(product, i, vrnt, gridItemPrefab);
+        }
+        StartCoroutine(ReArrangeitmes());
+    }
     IEnumerator ReArrangeitmes()
     {
         yield return new WaitForSeconds(0.1f);

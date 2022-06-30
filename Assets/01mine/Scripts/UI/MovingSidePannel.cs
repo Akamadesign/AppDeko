@@ -36,4 +36,9 @@ public class MovingSidePannel : MonoBehaviour
     {
         toShow = show;
     }
+    public void SetShowRect(Vector2 min, Vector2 max)
+    {
+        showMin = min;
+        showMax = max;
+    }
 }

@@ -112,11 +112,17 @@ public class LoadAssets : MonoBehaviour
     }
     void PrefabToAR()
     {
-        FindObjectOfType<AkamaruStore>().SetNewView(AkamaruStore.View.RA);
+        AkamaruStore akamaruStore = FindObjectOfType<AkamaruStore>();
+        AkaStore akaStore = FindObjectOfType<AkaStore>();
+        if (akamaruStore == null)
+            akaStore.SetNewView(AkaStore.View.RA);
+        else
+            akamaruStore.SetNewView(AkamaruStore.View.RA);
         FindObjectOfType<MyARManager>().AddThisFittment(AkaPrefabs.LoadedPrefabs[fittmentID]);
     }
     void ReplacePrefab()
     {
+        print("Replacing fitttment");
         FindObjectOfType<MyARManager>().ReplacePrefab(AkaPrefabs.LoadedPrefabs[fittmentID]);
     }
 }

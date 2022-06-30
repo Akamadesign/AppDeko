@@ -26,10 +26,8 @@ public class AkamaruStore : MonoBehaviour
     View scrrenBeforeCart, screenBeforeRA;
     List<GameObject> gridItems;
     Collection lastCollection;
-    UnityEngine.UI.Image backGround;
     void Start()
     {
-        backGround = GetComponent<UnityEngine.UI.Image>();
         gridItems = new List<GameObject>();
         storegridPanel = storeGrid.GetComponent<MovingSidePannel>();
         cartPanel = screenCart.GetComponent<MovingSidePannel>();
@@ -141,9 +139,7 @@ public class AkamaruStore : MonoBehaviour
     public void CleanGridList()
     {
         foreach (GameObject item in gridItems)
-        {
             Destroy(item);
-        }
         gridItems = new List<GameObject>();
     }
     /// <summary>
@@ -152,8 +148,6 @@ public class AkamaruStore : MonoBehaviour
     /// <param name="view">Vista a configurar</param>
     public void SetNewView(View newView)
     {
-        if (backGround == null)
-            backGround = GetComponent<UnityEngine.UI.Image>();
         print("settingnew view to " + newView);
         if (newView == View.Cart)
             scrrenBeforeCart = onScreen;
@@ -165,7 +159,6 @@ public class AkamaruStore : MonoBehaviour
             case View.Init:
                 backIcon.sprite = exit;
                 backText.text = "Exit";
-                backGround.color = Color.white;
                 initialPage.SetActive(true);
                 storegridPanel.toShow = false;
                 cartPanel.toShow = false;
@@ -175,7 +168,6 @@ public class AkamaruStore : MonoBehaviour
             case View.Collections:
                 backIcon.sprite = minor;
                 backText.text = "Back";
-                backGround.color = Color.white;
                 initialPage.SetActive(false);
                 storegridPanel.toShow = true;
                 cartPanel.toShow = false;
@@ -184,7 +176,6 @@ public class AkamaruStore : MonoBehaviour
                 raScreen.SetActive(false);
                 break;
             case View.Furniture:
-                backGround.color = Color.white;
                 initialPage.SetActive(false);
                 storegridPanel.toShow = true;
                 cartPanel.toShow = false;
@@ -192,7 +183,6 @@ public class AkamaruStore : MonoBehaviour
                 raScreen.SetActive(false);
                 break;
             case View.Details:
-                backGround.color = Color.white;
                 initialPage.SetActive(false);
                 storegridPanel.toShow = false;
                 cartPanel.toShow = false;
@@ -200,7 +190,6 @@ public class AkamaruStore : MonoBehaviour
                 raScreen.SetActive(false);
                 break;
             case View.Cart:
-                backGround.color = Color.white;
                 initialPage.SetActive(false);
                 storegridPanel.toShow = false;
                 cartPanel.toShow = true;
@@ -209,7 +198,6 @@ public class AkamaruStore : MonoBehaviour
                 break;
             case View.RA:
 
-                backGround.color = Color.clear;
                 initialPage.SetActive(false);
                 storegridPanel.toShow = false;
                 cartPanel.toShow = false;

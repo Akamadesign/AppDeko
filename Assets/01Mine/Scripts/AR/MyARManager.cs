@@ -50,6 +50,16 @@ public class MyARManager : MonoBehaviour
         arCamera = Camera.main;
         arFloor.SetActive(false);
     }
+    private void OnEnable()
+    {
+        arPlaneManager = GetComponent<ARPlaneManager>();
+        aRRaycastManager = GetComponent<ARRaycastManager>();
+        objectsOnScene = new List<GameObject>();
+        pointer = new Vector2(Screen.width / 2, Screen.height / 2);
+        arCamera = Camera.main;
+        arFloor.SetActive(false);
+
+    }
     void Update()
     {
         if (!arFloor.activeInHierarchy)//the ar floor is not active in scene
@@ -76,7 +86,8 @@ public class MyARManager : MonoBehaviour
             {
                 if (objectsOnScene.Count > 1)
                     messagetxt.text = "";
-                if(selectedObject != null)//there is an object selected so we can move it and rotate it
+                LookingForSelection();
+                if (selectedObject != null)//there is an object selected so we can move it and rotate it
                 {
                     reStart.SetActive(false);
                     cancelIt.SetActive(false);
@@ -104,7 +115,7 @@ public class MyARManager : MonoBehaviour
                     fittmentInfo.SetActive(false);
                     deleteFittment.SetActive(false);
                 }
-                LookingForSelection();
+               
             }
         }
     }
@@ -113,26 +124,39 @@ public class MyARManager : MonoBehaviour
     /// </summary>
     void LookingForSelection()
     {
-        if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        if (Input.touchCount == 1)
         {
-            print("Touching one");
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 100, selectable))
+            if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
             {
-                print("selecting");
-                selectedObject = hit.collider.GetComponent<Rigidbody>();
-                selectedObject.GetComponent<Outline>().enabled = true;
-                selectedObject.GetComponent<Outline>().OutlineWidth = 10;
+                if (Input.GetTouch(0).phase != TouchPhase.Ended)
+                {
+                    print("Touching one");
+                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                    RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit, 100, selectable))
+                    {
+                        print("selecting");
+                        selectedObject = hit.collider.GetComponent<Rigidbody>();
+                        selectedObject.GetComponent<Outline>().enabled = true;
+                        selectedObject.GetComponent<Outline>().OutlineWidth = 10;
+                        selectedObject.isKinematic = false;
+                    }
+                    else
+                    {
+                        print("desselect");
+                        if (selectedObject != null)
+                        {
+                            selectedObject.isKinematic = true;
+                            selectedObject.GetComponent<Outline>().enabled = false;
+                        }
+                        selectedObject = null;
+                    }
+                }
             }
             else
             {
-                print("desselect");
-                if (selectedObject != null)
-                {
-                    selectedObject.GetComponent<Outline>().enabled = false;
-                }
-                selectedObject = null;
+                print("TouchingUI");
+                return;
             }
         }
     }
@@ -173,8 +197,8 @@ public class MyARManager : MonoBehaviour
                 float planeArea = thisplane.size.x * thisplane.size.y;
                 if (planeArea > minimunArea)
                 {
-                    GameObject origin = FindObjectOfType<ARSessionOrigin>().gameObject;
-                    origin.transform.SetPositionAndRotation(hit.pose.position, hit.pose.rotation);
+                    GameObject arOrigin = FindObjectOfType<ARSessionOrigin>().gameObject;
+                    arOrigin.transform.SetPositionAndRotation(hit.pose.position, hit.pose.rotation);
                     arFloor.transform.SetPositionAndRotation(hit.pose.position, hit.pose.rotation);
                     arFloor.SetActive(true);
                     arFloorStartPos = arFloor.transform.position;
@@ -182,6 +206,11 @@ public class MyARManager : MonoBehaviour
                 }
             }
         }
+#if UNITY_EDITOR
+        arFloor.SetActive(true);
+        arfloorRB = arFloor.GetComponent<Rigidbody>();
+        arFloorStartPos = arFloor.transform.position;
+#endif
         if (arFloor.activeInHierarchy)
         {
             foreach (ARPlane plane in arPlaneManager.trackables)
@@ -205,7 +234,7 @@ public class MyARManager : MonoBehaviour
             print("Le estoy dando al suelo");
             if (objectPlacing == null || !objectPlacing.gameObject.activeInHierarchy)
             {
-                objectPlacing = Instantiate(objectToPlace, hit.point, hit.transform.rotation);
+                objectPlacing = Instantiate(objectToPlace, hit.point, hit.transform.rotation,arFloor.transform);
                 objectPlacing.GetComponent<Outline>().enabled = true;
                 objectPlacing.GetComponent<Outline>().OutlineWidth = 10;
             }
@@ -233,6 +262,7 @@ public class MyARManager : MonoBehaviour
         objectToPlace = null;
         objectsOnScene.Add(objectPlacing);
         selectedObject = objectPlacing.GetComponent<Rigidbody>();
+        selectedObject.isKinematic = true;
         objectPlacing = null;
     }
     /// <summary>
@@ -243,7 +273,7 @@ public class MyARManager : MonoBehaviour
         timeTotove = 0.3f;
         print("Starting To Rotate");
         firstDirection = Input.GetTouch(0).position - Input.GetTouch(1).position;
-        initialSelectedRotation = selectedObject.transform.rotation.eulerAngles;
+        initialSelectedRotation = selectedObject.transform.localEulerAngles;
         midStartPos = Vector2.Lerp(Input.GetTouch(0).position, Input.GetTouch(1).position, 0.5f);
         Ray ray = Camera.main.ScreenPointToRay(midStartPos);
         RaycastHit hit;
@@ -262,7 +292,8 @@ public class MyARManager : MonoBehaviour
         Vector2 midPos = Vector2.Lerp(Input.GetTouch(0).position, Input.GetTouch(1).position, 0.5f);
         float rotationAngle = Vector2.SignedAngle(firstDirection, newDirection);
         float newRotationAngle = initialSelectedRotation.y - rotationAngle;
-        Vector3 newRotation = selectedObject.transform.rotation.eulerAngles;
+
+        Vector3 newRotation = selectedObject.transform.localEulerAngles;
         newRotation.y = newRotationAngle;
         Ray ray = Camera.main.ScreenPointToRay(midPos);
         RaycastHit hit;
@@ -274,7 +305,7 @@ public class MyARManager : MonoBehaviour
                 selectedObject.MovePosition(initialSelectedPosition + movement);
             }
         }
-        selectedObject.MoveRotation(Quaternion.Euler(newRotation));
+        selectedObject.transform.localRotation = Quaternion.Euler(newRotation);
     }
     /// <summary>
     /// reset the inisializatiion variables
@@ -293,6 +324,8 @@ public class MyARManager : MonoBehaviour
     /// <param name="newHeigth"></param>
     public void SetFloorHeigth(float newHeigth)
     {
+        if (arfloorRB == null)
+            arfloorRB = arFloor.GetComponent<Rigidbody>();
         float newheigth = Mathf.Lerp(-1, 1, newHeigth);
         Vector3 newPos = arFloorStartPos + (arFloor.transform.up * newheigth);
         arfloorRB.MovePosition(newPos);
