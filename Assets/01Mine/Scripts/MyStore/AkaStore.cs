@@ -4,11 +4,12 @@ using UnityEngine.UI;
 using Shopify.Unity;
 public class AkaStore : MonoBehaviour
 {
-    public enum View {Init, Collections, Furniture, Details, Cart, RA}
+    public enum View {Init, Collections, Furniture, Details, Cart}
     [Header("Paginas para activar")]
     [SerializeField] GameObject initialPage;
     [SerializeField] GameObject details, screenCart;
     [SerializeField] ScrollRect storeGrid;
+    public GameObject raPannel;
     public AkaDetailsManager detailsManager;
     [SerializeField] MovingSidePannel thisMovingPanel;
     [Header("Vista actual")]
@@ -72,10 +73,18 @@ public class AkaStore : MonoBehaviour
         SetNewView(View.Collections);
         if (gridItems != null)
             CleanGridList();
-        thisMovingPanel.SetShowRect(new Vector2(0, 0), new Vector2(1, 1));
+        thisMovingPanel.SetShowRect(new Vector2(0, 0), new Vector2(1, 0.95f));
         storeGrid.content.GetComponent<GridLayoutGroup>().cellSize = new Vector2(300, 300);
+        detailsManager.optionsPlace.GetComponent<GridLayoutGroup>().cellSize = new Vector2(900, 220);
         thisMovingPanel.toShow = true;
         initialPage.SetActive(false);
+    }
+    public void ShoUpStore()
+    {
+        SetNewView(View.Collections);
+        if (gridItems != null)
+            CleanGridList();
+        thisMovingPanel.toShow = true;
     }
     public void QueryAndDrawSomeProducts(Collection collection)
     {
@@ -93,20 +102,29 @@ public class AkaStore : MonoBehaviour
             FillGridList(products);
         }, pdctsids);
     }
+    public void ToogleViewToRA()
+    {
+        thisMovingPanel.SetShowRect(new Vector2(1 / 3f, 0), new Vector2(1, 0.95f));
+        thisMovingPanel.toShow = false;
+        storeGrid.content.GetComponent<GridLayoutGroup>().cellSize = new Vector2(200, 250);
+        detailsManager.optionsPlace.GetComponent<GridLayoutGroup>().cellSize = new Vector2(650, 220);
+        raPannel.SetActive(true);
+    }
     public void SetNewView(View newView)
     {
         print("settingnew view to " + newView);
         if (newView == View.Cart)
+        {
             scrrenBeforeCart = onScreen;
+            screenCart.GetComponent<MovingSidePannel>().toShow = true;
+        }
         onScreen = newView;
         details.SetActive(onScreen == View.Details);
-        screenCart.gameObject.SetActive(onScreen == View.Cart);
+        storeGrid.viewport.gameObject.SetActive(onScreen != View.Cart);
         if (onScreen == View.Collections)
             QueryAndDrawCollections();
-        if (newView == View.RA)
-            thisMovingPanel.SetShowRect(new Vector2(1 / 3f, 0), new Vector2(1, 1));
     }
-    public void GoBack()
+        public void GoBack()
     {
         switch (onScreen)
         {
@@ -120,6 +138,7 @@ public class AkaStore : MonoBehaviour
                 break;
             case View.Cart:
                 SetNewView(scrrenBeforeCart);
+                screenCart.GetComponent<MovingSidePannel>().toShow = true;
                 break;
             default:
                 break;

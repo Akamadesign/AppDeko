@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/01Mine/01Scenes/TiendaRa.unity
     guid: f1a170013c0a84927bc5fa91075a3eba
-  - enabled: 1
+  - enabled: 0
     path: Assets/01Mine/01Scenes/TiendaRAV2.unity
     guid: 2b42e8008eaa941479f0d0b438c3293c
+  - enabled: 1
+    path: Assets/01Mine/01Scenes/TiendaRAV3.unity
+    guid: aa265b818772a4cff8c5ca58f25f01ce
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

@@ -18,13 +18,18 @@ public class LoadAssets : MonoBehaviour
 
     bool executingSomeAsync;
     bool newObject;
-    public void WatchThisFittmentOnAR(string fit, bool newGameObject)
+    /// <summary>
+    /// load a tifftmet to RA 
+    /// </summary>
+    /// <param name="fittmentID"></param>
+    /// <param name="newGameObject"></param>
+    public void WatchThisFittmentOnAR(string fittmentID, bool newGameObject)
     {
         newObject = newGameObject;
         print("Load asset was invoked");
-        fittmentID = fit;
+        this.fittmentID = fittmentID;
         item = null;
-        if (AkaPrefabs.LoadedPrefabs.ContainsKey(fittmentID))
+        if (AkaPrefabs.LoadedPrefabs.ContainsKey(this.fittmentID))
         {
             if (newObject)
                 PrefabToAR();
@@ -115,14 +120,14 @@ public class LoadAssets : MonoBehaviour
         AkamaruStore akamaruStore = FindObjectOfType<AkamaruStore>();
         AkaStore akaStore = FindObjectOfType<AkaStore>();
         if (akamaruStore == null)
-            akaStore.SetNewView(AkaStore.View.RA);
+            akaStore.ToogleViewToRA();
         else
             akamaruStore.SetNewView(AkamaruStore.View.RA);
-        FindObjectOfType<MyARManager>().AddThisFittment(AkaPrefabs.LoadedPrefabs[fittmentID]);
+        FindObjectOfType<AkaARManager>().AddThisFittment(AkaPrefabs.LoadedPrefabs[fittmentID]);
     }
     void ReplacePrefab()
     {
         print("Replacing fitttment");
-        FindObjectOfType<MyARManager>().ReplacePrefab(AkaPrefabs.LoadedPrefabs[fittmentID]);
+        FindObjectOfType<AkaARManager>().ReplacePrefab(AkaPrefabs.LoadedPrefabs[fittmentID]);
     }
 }

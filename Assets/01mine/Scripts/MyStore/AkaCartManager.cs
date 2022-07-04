@@ -19,6 +19,7 @@ public class AkaCartManager : MonoBehaviour
     }
     public void UpdateGlobalQuantity()
     {
+
         print("GlobalQuantityUpdt¡ated");
         GlobalQuantity.SetActive(AkaCart.myCart.LineItems.All().Count > 0 ? true : false);
         float finalQuantity = 0;
@@ -57,13 +58,13 @@ public class AkaCartManager : MonoBehaviour
     }
     public void SetViewToCart()
     {
-        AkamaruStore akaStore= FindObjectOfType<AkamaruStore>();
-        if(akaStore.onScreen == AkamaruStore.View.Cart)
+        AkaStore akaStore= FindObjectOfType<AkaStore>();
+        if(akaStore.onScreen == AkaStore.View.Cart)
         {
             akaStore.GoBack();
         }else
         {
-            akaStore.SetNewView(AkamaruStore.View.Cart);
+            akaStore.SetNewView(AkaStore.View.Cart);
         }
     }
     public void CheckOutLink()

@@ -12,44 +12,29 @@ public class AkaGridItem : MonoBehaviour
     List<ProductVariant> variantes;
     public ProductVariant currentVariant;
 
-    AkamaruStore akamaruStore;
     AkaStore akaStore;
     public void ButtonAction()
     {
-        akamaruStore = FindObjectOfType<AkamaruStore>();
         akaStore = FindObjectOfType<AkaStore>();
         if (collection != null)
         {
             print("CollectionButton");
-            if (akamaruStore != null)
-                akamaruStore.QueryAndDrawSomeProducts(collection);
-            else
-                akaStore.QueryAndDrawSomeProducts(collection);
+            akaStore.QueryAndDrawSomeProducts(collection);
         }
         else if (product != null)
         {
-            MyARManager arManager = FindObjectOfType<MyARManager>();
+            AkaARManager arManager = FindObjectOfType<AkaARManager>();
 
+            variantes = (List<ProductVariant>)product.variants();
+            if (akaStore != null)
+            {
+                akaStore.SetNewView(AkaStore.View.Details);
+                akaStore.detailsManager.FillWithDetails(product, currentVariant != null ? currentVariant : variantes[0]);
+            }
+            print("ProductButton " + product.title());
             if (arManager != null && arManager.gameObject.activeInHierarchy && arManager.selectedObject != null)
             {
-                print("ChangeModel");
-                arManager.fittmentDetails.GetComponent<RAFittmentDetails>().FillWithDetails(product, currentVariant);
-                FindObjectOfType<RAFittmentDetails>().GetComponent<LoadAssets>().WatchThisFittmentOnAR(currentVariant.id(), false);
-            }
-            else
-            {
-                variantes = (List<ProductVariant>)product.variants();
-                if (akamaruStore != null)
-                {
-                    akamaruStore.SetNewView(AkamaruStore.View.Details);
-                    akamaruStore.detailsManager.RADetailsFill(product, currentVariant != null ? currentVariant : variantes[0]);
-                }
-                if (akaStore != null)
-                {
-                    akaStore.SetNewView(AkaStore.View.Details);
-                    akaStore.detailsManager.RADetailsFill(product, currentVariant != null ? currentVariant : variantes[0]);
-                }
-                print("ProductButton " + product.title());
+                akaStore.detailsManager.GetComponent<LoadAssets>().WatchThisFittmentOnAR(currentVariant.id(), false);
             }
         }
     }

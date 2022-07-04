@@ -330,7 +330,6 @@ public class MyARManager : MonoBehaviour
         Vector3 newPos = arFloorStartPos + (arFloor.transform.up * newheigth);
         arfloorRB.MovePosition(newPos);
     }
-
     public void GetFittmentInfo()
     {
         print("trying to dyplay info");
@@ -345,7 +344,6 @@ public class MyARManager : MonoBehaviour
         fittmentDetails.GetComponent<MovingSidePannel>().toShow = true;
         fittmentDetails.GetComponent<RAFittmentDetails>().FillWithDetails(pr,vr);
     }
-   
     public void DeleteSelectedItem()
     {
         print("trying to delete fittment");
