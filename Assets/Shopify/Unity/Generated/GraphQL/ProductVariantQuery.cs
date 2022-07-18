@@ -488,7 +488,7 @@ namespace Shopify.Unity.GraphQL {
         }
         ///*******************************************************************************************
         ///ExtendedByAkamaru
-       
+
         /// <summary>
         /// The total sellable quantity of the variant for online sales channels.
         /// </summary>
@@ -502,4 +502,4 @@ namespace Shopify.Unity.GraphQL {
         ///End
         ///********************************************************************************************
     }
-    }
+}
